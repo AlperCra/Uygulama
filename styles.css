@@ -1,0 +1,127 @@
+:root {
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent: #4f46e5;
+  --accent-dark: #4338ca;
+  --shadow: 0 10px 30px rgba(31, 41, 55, 0.08);
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(145deg, #eef2ff, var(--bg));
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.container {
+  width: min(920px, 92%);
+  margin: 2.5rem auto;
+  display: grid;
+  gap: 1.3rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 1.3rem;
+}
+
+.hero h1 {
+  margin-bottom: 0.4rem;
+  font-size: clamp(1.5rem, 2vw + 1rem, 2.2rem);
+}
+
+.hero p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 1.3rem;
+  box-shadow: var(--shadow);
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.form-grid {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.two-cols {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  align-items: end;
+}
+
+label {
+  display: grid;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+input,
+select {
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 0.65rem 0.75rem;
+  background: #fff;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #a5b4fc;
+  border-color: #818cf8;
+}
+
+button {
+  border: none;
+  border-radius: 12px;
+  padding: 0.7rem 1rem;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.08s ease, background 0.2s ease;
+}
+
+button:hover {
+  background: var(--accent-dark);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.result {
+  margin: 1rem 0 0;
+  font-weight: 600;
+  color: #111827;
+  min-height: 1.3rem;
+}
+
+@media (min-width: 760px) {
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-grid button {
+    grid-column: 1 / -1;
+  }
+}
