@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalori & BMI Takip</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="hero">
+        <h1>Kalori Ölçer & BMI Hesaplayıcı</h1>
+        <p>Günlük enerji ihtiyacını tahmin et, vücut kitle indeksini anında öğren.</p>
+      </header>
+
+      <section class="card" aria-labelledby="calorie-title">
+        <h2 id="calorie-title">Kalori Ölçer</h2>
+        <form id="calorie-form" class="form-grid">
+          <label>
+            Cinsiyet
+            <select id="gender" required>
+              <option value="female">Kadın</option>
+              <option value="male">Erkek</option>
+            </select>
+          </label>
+
+          <label>
+            Yaş
+            <input id="age" type="number" min="10" max="100" placeholder="Örn: 28" required />
+          </label>
+
+          <label>
+            Boy (cm)
+            <input id="height" type="number" min="120" max="230" placeholder="Örn: 175" required />
+          </label>
+
+          <label>
+            Kilo (kg)
+            <input id="weight" type="number" min="30" max="250" placeholder="Örn: 72" required />
+          </label>
+
+          <label>
+            Aktivite Düzeyi
+            <select id="activity" required>
+              <option value="1.2">Hareketsiz</option>
+              <option value="1.375">Az aktif</option>
+              <option value="1.55">Orta aktif</option>
+              <option value="1.725">Çok aktif</option>
+              <option value="1.9">Sporcu düzeyi</option>
+            </select>
+          </label>
+
+          <button type="submit">Kalori Hesapla</button>
+        </form>
+        <p id="calorie-result" class="result" aria-live="polite"></p>
+      </section>
+
+      <section class="card" aria-labelledby="bmi-title">
+        <h2 id="bmi-title">BMI (Vücut Kitle İndeksi)</h2>
+        <form id="bmi-form" class="form-grid two-cols">
+          <label>
+            Boy (cm)
+            <input id="bmi-height" type="number" min="120" max="230" placeholder="Örn: 175" required />
+          </label>
+          <label>
+            Kilo (kg)
+            <input id="bmi-weight" type="number" min="30" max="250" placeholder="Örn: 72" required />
+          </label>
+          <button type="submit">BMI Hesapla</button>
+        </form>
+        <p id="bmi-result" class="result" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
